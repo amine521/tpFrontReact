@@ -3,17 +3,17 @@ import React from 'react';
 
 class TestApi extends React.Component{
 
-    urlin ="http://localhost:8080/";
+    urlin ="https://tp-rest-spring.herokuapp.com/";
 
 
         state = {
             response : [],
-            name : "\"default\"",
+            name : "",
             r :"",
             initialMessage :""
     }
 
-    url ="http://localhost:8080/greeting/"+this.state.name;
+    url ="https://tp-rest-spring.herokuapp.com/greeting/"+this.state.name;
 
 
 
@@ -52,8 +52,14 @@ class TestApi extends React.Component{
 
                     <div className="form-group">
                       <input  className="form-control" type="text"  placeholder="saisir votre nom" onChange={this.handleNameChange}/>
-                         <p>le nom à envoyer au serveur : {" "+this.state.name}</p>
-                    <button  className="form-control" className="btn-primary" >envoyer</button>
+                    </div>
+
+                    <div className="form-group">
+                        <label className="form-control">le nom à envoyer au serveur <a href="https://tp-rest-spring.herokuapp.com/greeting/">backend endpoint  : </a></label>
+                    </div>
+                        <div className="form-group">
+                        {" "+this.state.name+"  \n"}
+                    <button  className="form-control" className="btn btn-primary" >envoyer</button>
                     </div>
                 </form>
 
