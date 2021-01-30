@@ -30,7 +30,7 @@ class TestApi extends React.Component{
     handleSubmit = (e)=>{
         e.preventDefault();
         console.log('submitted');
-            this.url = "http://localhost:8080/greeting/"+this.state.name+"";
+            this.url = "https://tp-rest-spring.herokuapp.com/greeting/"+this.state.name+"";
             fetch(this.url).then(res => res.text())
                 .then(res2 => {
                     console.log(typeof res2);
